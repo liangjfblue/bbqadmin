@@ -1,14 +1,15 @@
 import type { App } from 'vue'
-import LoginRouter from './modules/login'
-import TestRouter from './modules/test'
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import { start, close } from '@/utils/nprogress'
 
 export const publicRoutes: Array<RouteRecordRaw> = [
-	...LoginRouter,
-	...TestRouter,
+	{
+		path: '/',
+		redirect: '/home'
+	},
 	{
 		path: '/home',
-		name: 'homeIndex',
+		name: 'home',
 		component: () => import('@/views/home/index.vue')
 	}
 ]
@@ -16,6 +17,15 @@ export const publicRoutes: Array<RouteRecordRaw> = [
 const router = createRouter({
 	history: createWebHashHistory(),
 	routes: publicRoutes
+})
+
+router.beforeEach((to, from, next) => {
+	start()
+	next()
+})
+
+router.afterEach(() => {
+	close()
 })
 
 /* 初始化路由表 */

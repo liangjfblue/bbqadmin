@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>Home</h1>
+		<h3 v-for="i in 100" :key="i">Home</h3>
 	</div>
 </template>
 

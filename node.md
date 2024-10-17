@@ -1,4 +1,4 @@
-#node
+# node
 
 ## 安装pnpm
 
@@ -64,3 +64,9 @@ eslintConfigPrettier
     ],
   })
 ```
+
+## 配置@别名
+
+- 卸载volar插件, 只安装Vue-Official
+- 配置vite.config.ts文件
+- 配置tsconfig.json文件

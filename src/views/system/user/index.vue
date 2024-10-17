@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>Test</h1>
+		<h1>用户页面</h1>
 	</div>
 </template>
 
